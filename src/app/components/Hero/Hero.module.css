@@ -1,0 +1,27 @@
+.heroImage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../../public/ballerina.jpg");
+  height: 40vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heroText {
+  text-align: right;
+  padding: 7%;
+  color: white;
+}
+
+.heroTitle {
+  font-family: "Great Vibes", sans-serif;
+  font-size: 100px;
+  font-weight: 100;
+  line-height: 70px;
+}
+
+.heroSubtitle {
+  font-weight: 300;
+  font-size: 20px;
+}
