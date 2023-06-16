@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -24,8 +25,25 @@ const Navbar = () => {
       }`}
     >
       <img src="/images/ballet.png" alt="Logo" className={styles.logo} />
-      <div className={styles.links}>
-        <a href="#home">Home</a>
+      <div className={`${navbar ? styles.linksPink : styles.linksWhite}`}>
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+          Home
+        </Link>
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+          Sobre o Estúdio
+        </Link>
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+          Nosso Time
+        </Link>
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+          Modalidades
+        </Link>
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+          Horários
+        </Link>
+        <Link href="#home" className={styles.links}>
+          Contato
+        </Link>
       </div>
     </div>
   );
