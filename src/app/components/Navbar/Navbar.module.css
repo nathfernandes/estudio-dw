@@ -1,22 +1,25 @@
 .navbar {
   overflow: hidden;
-  background-color: #333;
-  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  padding: 0.7% 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colorNavbar {
+  background-color: #c4267c;
+}
+.transparentNavbar {
   background: transparent;
 }
 
 .links {
-  float: right;
-  display: block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
 }
 
 .logo {
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px;
+  width: 3%;
 }
