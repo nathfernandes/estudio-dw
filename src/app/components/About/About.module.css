@@ -1,0 +1,29 @@
+.about {
+  display: flex;
+  width: 100%;
+  padding: 5% 10%;
+  justify-content: space-between;
+}
+
+.aboutImageDiv {
+  width: 40%;
+  background-color: var(--pink);
+}
+
+.aboutImage {
+  width: 100%;
+  top: 20px;
+  left: -20px;
+  position: relative;
+}
+
+.titles {
+  font-family: "Rapha Talia", sans-serif;
+  padding-bottom: 3%;
+}
+
+.textAbout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
