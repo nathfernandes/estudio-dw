@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
+
+  const route = usePathname();
+  console.log(route);
+
+  useEffect(() => {
+    console.log(route);
+    setCurrentPath(route);
+  }, []);
 
   const changeBackground = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 66) {
       setNavbar(true);
     } else {
@@ -26,22 +35,27 @@ const Navbar = () => {
     >
       <img src="/images/ballet.png" alt="Logo" className={styles.logo} />
       <div className={`${navbar ? styles.linksPink : styles.linksWhite}`}>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+        <Link
+          className={`${styles.linksSpace} ${styles.links} ${
+            route == "/" && "active"
+          }`}
+          href="/"
+        >
           Home
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
           Sobre o Estúdio
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
           Nosso Time
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
           Modalidades
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#home">
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
           Horários
         </Link>
-        <Link href="#home" className={styles.links}>
+        <Link href="some" className={styles.links}>
           Contato
         </Link>
       </div>

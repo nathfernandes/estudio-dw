@@ -22,6 +22,11 @@
 .links {
   font-size: 18px;
 }
+
+.links:active {
+  color: var(--pink);
+}
+
 .linksSpace {
   padding-right: 40px;
 }
