@@ -42,3 +42,9 @@
 .logo {
   width: 10%;
 }
+
+.activeLink {
+  text-decoration: underline;
+  font-weight: bold;
+  text-underline-offset: 8px;
+}

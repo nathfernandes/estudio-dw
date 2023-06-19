@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useSearchParams, useRouter, useParams } from "next/navigation";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
 
-  const route = usePathname();
-  console.log(route);
+  const params = useParams();
+  const route = useRouter();
 
   useEffect(() => {
-    console.log(route);
-    setCurrentPath(route);
-  }, []);
+    setCurrentPath(window.location.hash);
+  }, [params]);
 
   const changeBackground = () => {
     if (window.scrollY >= 66) {
@@ -23,8 +22,13 @@ const Navbar = () => {
     }
   };
 
+  const changeHash = () => {
+    route.push(`/`, undefined, { scroll: false });
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
+    window.addEventListener("scroll", changeHash);
   }, []);
 
   return (
@@ -35,24 +39,39 @@ const Navbar = () => {
     >
       <img src="/images/ballet.png" alt="Logo" className={styles.logo} />
       <div className={`${navbar ? styles.linksPink : styles.linksWhite}`}>
-        <Link
-          className={`${styles.linksSpace} ${styles.links} ${
-            route == "/" && "active"
-          }`}
-          href="/"
-        >
+        <Link className={`${styles.linksSpace} ${styles.links}`} href="/">
           Home
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
+        <Link
+          className={`${styles.linksSpace} ${styles.links} ${
+            currentPath == "#sobre" && styles.activeLink
+          }`}
+          href="#sobre"
+        >
           Sobre o Estúdio
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
+        <Link
+          className={`${styles.linksSpace} ${styles.links} ${
+            currentPath == "#time" && styles.activeLink
+          }`}
+          href="#time"
+        >
           Nosso Time
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
+        <Link
+          className={`${styles.linksSpace} ${styles.links} ${
+            currentPath == "#modalidades" && styles.activeLink
+          }`}
+          href="#modalidades"
+        >
           Modalidades
         </Link>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="#some">
+        <Link
+          className={`${styles.linksSpace} ${styles.links} ${
+            currentPath == "#horarios" && styles.activeLink
+          }`}
+          href="#horarios"
+        >
           Horários
         </Link>
         <Link href="some" className={styles.links}>
