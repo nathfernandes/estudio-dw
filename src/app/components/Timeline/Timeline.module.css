@@ -1,0 +1,19 @@
+.timelineMobile {
+  display: none;
+}
+
+.timelineDesktop {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .timelineMobile {
+    display: flex;
+  }
+
+  .timelineDesktop {
+    display: none;
+  }
+}

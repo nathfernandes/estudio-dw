@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className={styles.about} id="sobre">
       <div className={`${styles.textAbout} ${stylesGlobal.half}`}>
-        <h1 className={styles.titles}>História do Estúdio DW</h1>
+        <h1 className={stylesGlobal.titles}>História do Estúdio DW</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipis cinelit, sed do eiusmod
           tempor incididunt labore et dolore ali. Lorem ipsum dolor sit amet,

@@ -11,6 +11,21 @@
   width: 50%;
 }
 
+.titles {
+  font-family: "Rapha Talia", sans-serif;
+  padding-bottom: 3%;
+}
+
+.divFlexColumn {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.sectionSpace {
+  padding: 5% 10%;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
 }

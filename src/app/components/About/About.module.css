@@ -17,11 +17,6 @@
   position: relative;
 }
 
-.titles {
-  font-family: "Rapha Talia", sans-serif;
-  padding-bottom: 3%;
-}
-
 .textAbout {
   display: flex;
   flex-direction: column;

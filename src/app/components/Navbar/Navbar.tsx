@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import { useSearchParams, useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
-  const [currentPath, setCurrentPath] = useState("");
+  const [activeLink, setActiveLink] = useState("");
 
   const params = useParams();
-  const route = useRouter();
 
   useEffect(() => {
-    setCurrentPath(window.location.hash);
+    setActiveLink(window.location.hash);
   }, [params]);
 
   const changeBackground = () => {
@@ -22,13 +21,8 @@ const Navbar = () => {
     }
   };
 
-  const changeHash = () => {
-    route.push(`/`, undefined, { scroll: false });
-  };
-
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
-    window.addEventListener("scroll", changeHash);
   }, []);
 
   return (
@@ -39,12 +33,12 @@ const Navbar = () => {
     >
       <img src="/images/ballet.png" alt="Logo" className={styles.logo} />
       <div className={`${navbar ? styles.linksPink : styles.linksWhite}`}>
-        <Link className={`${styles.linksSpace} ${styles.links}`} href="/">
+        <Link className={`${styles.linksSpace} ${styles.links} `} href="/">
           Home
         </Link>
         <Link
           className={`${styles.linksSpace} ${styles.links} ${
-            currentPath == "#sobre" && styles.activeLink
+            activeLink == "#sobre" && styles.activeLink
           }`}
           href="#sobre"
         >
@@ -52,15 +46,15 @@ const Navbar = () => {
         </Link>
         <Link
           className={`${styles.linksSpace} ${styles.links} ${
-            currentPath == "#time" && styles.activeLink
-          }`}
+            activeLink == "#time" && styles.activeLink
+          } `}
           href="#time"
         >
           Nosso Time
         </Link>
         <Link
           className={`${styles.linksSpace} ${styles.links} ${
-            currentPath == "#modalidades" && styles.activeLink
+            activeLink == "#modalidades" && styles.activeLink
           }`}
           href="#modalidades"
         >
@@ -68,7 +62,7 @@ const Navbar = () => {
         </Link>
         <Link
           className={`${styles.linksSpace} ${styles.links} ${
-            currentPath == "#horarios" && styles.activeLink
+            activeLink == "#horarios" && styles.activeLink
           }`}
           href="#horarios"
         >
