@@ -17,6 +17,15 @@
   position: relative;
 }
 
+.aboutImageDiv img {
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+}
+
+.aboutImageDiv:hover img {
+  transform: translateX(4px);
+}
+
 .textAbout {
   display: flex;
   flex-direction: column;
