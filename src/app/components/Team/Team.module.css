@@ -1,0 +1,40 @@
+.cardsTeam {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.profCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divImage {
+  width: 270px;
+  height: 360px;
+  overflow: hidden;
+}
+
+.divImage img {
+  margin-left: 0px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.divImage:hover img {
+  margin-left: 10px;
+}
+
+.profImages {
+  width: 100%;
+}
+
+.icons {
+  color: #8f8f8f;
+  margin-left: 10px;
+}
+
+.icons:hover {
+  color: var(--pink);
+}
