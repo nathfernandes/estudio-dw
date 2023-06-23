@@ -22,22 +22,22 @@ const steps = [
   {
     label: "2000",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipis cinelit, sed do eiusmod tempor incididunt labore et dolore ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
+      "Dolore ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
   },
   {
     label: "2007",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipis cinelit, sed do eiusmod tempor incididunt labore et dolore ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
+      "Sum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
   },
   {
     label: "2010",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipis cinelit, sed do eiusmod tempor incididunt labore et dolore ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
+      "Loreiusmod tempor incididunt labore et dolore ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
   },
   {
     label: "2019",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipis cinelit, sed do eiusmod tempor incididunt labore et dolore ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
+      "Ali. Lorem ipsum dolor sit amet, consectetur adipis cingelit, sed do eiusmod tempor incidi. dunt u labore et dolore magna aliqua. Ut enim ad minim. veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipis",
   },
   {
     label: "2022",
@@ -150,7 +150,6 @@ const Timeline = () => {
     <div
       className={`${stylesGlobal.sectionSpace} ${stylesGlobal.divFlexColumn}`}
     >
-      <h1 className={stylesGlobal.titles}>Timeline</h1>
       <div className={styles.timelineDesktop}>
         <Stepper
           nonLinear
@@ -163,13 +162,17 @@ const Timeline = () => {
               <StepButton onClick={handleStep(index)} className={c.root}>
                 {step.label}
               </StepButton>
-              <StepContent style={{ border: "none" }} transitionDuration={0}>
-                <p>{step.description}</p>
-              </StepContent>
+              <StepContent
+                style={{ border: "none" }}
+                transitionDuration={0}
+              ></StepContent>
             </Step>
           ))}
         </Stepper>
-        <React.Fragment>
+        <div>
+          <div className={styles.stepContent}>
+            <p>{steps[activeStep].description}</p>
+          </div>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <ColorTextButton
               disabled={activeStep === 0}
@@ -186,7 +189,7 @@ const Timeline = () => {
               {isLastStep() ? "Comece de novo" : "Saiba mais"}
             </ColorButton>
           </Box>
-        </React.Fragment>
+        </div>
       </div>
 
       <div className={styles.timelineMobile}>
